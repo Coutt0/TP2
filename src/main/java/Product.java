@@ -1,14 +1,14 @@
 public class Product {
     private String name;
-    private  String deion;
+    private  String description;
     private String picture;
     private Category category;
     private int price;
     private  String unityType;
 
-    public Product(String name, String deion, String picture, Category category,int price, String unityType){
+    public Product(String name, String description, String picture, Category category,int price, String unityType){
         this.name = name;
-        this.deion = deion;
+        this.description = description;
         this.picture = picture;
         this.category = category;
         this.price = price;
@@ -24,11 +24,11 @@ public class Product {
     }
 
     public String getDeion() {
-        return deion;
+        return description;
     }
 
     public void setDeion(String deion) {
-        this.deion = deion;
+        this.description = description;
     }
 
     public String getPicture() {
