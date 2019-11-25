@@ -15,5 +15,8 @@ public class Main {
        Product product5 = new Product("iPhone7","32GB","picture",category3,500,"un");
        Product product6 = new Product("iPhone8","32GB","picture",category3,550,"un");
        Product product7 = new Product("iPhone11","256GB","picture",category3,1450,"un");
+
+       Address address1 = new Address("Barcelos",345,"123-1414");
+       Address address2 = new Address("Braga",527,"121-1424");
     }
 }
