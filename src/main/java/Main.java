@@ -18,5 +18,8 @@ public class Main {
 
        Address address1 = new Address("Barcelos",345,"123-1414");
        Address address2 = new Address("Braga",527,"121-1424");
+
+       User user1 = new User("Renato","renato@gmail.com","renato","password",address1);
+       User user2 = new User("Tiago","tiago@gmail.com","TIAGO","ola",address2);
     }
 }
