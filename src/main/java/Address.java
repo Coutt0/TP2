@@ -1,14 +1,19 @@
 public class Address {
     public String streetname;
-    public String doorno;
+    public int doorno;
     private String postalcode;
 
+    public Address(String streetname,int doorno,String postalcode){
+        this.streetname = streetname;
+        this.doorno = doorno;
+        this.postalcode = postalcode;
+    }
 
     public String getStreetname() {
         return streetname;
     }
 
-    public String getDoorno() {
+    public int getDoorno() {
         return doorno;
     }
 
@@ -20,7 +25,7 @@ public class Address {
         this.streetname = streetname;
     }
 
-    public void setDoorno(String doorno) {
+    public void setDoorno(int doorno) {
         this.doorno = doorno;
     }
 
