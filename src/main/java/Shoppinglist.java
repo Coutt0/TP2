@@ -7,7 +7,7 @@ public class Shoppinglist {
     private User user;
     private User userlist;
 
-    private List<Product> Productlist1 = new ArrayList<>();//Lista de produtos para comprar
+    public List<Product> Productlist1 = new ArrayList<>();//Lista de produtos para comprar
     private List<Product> Productlist2 = new ArrayList<>();// Lista de produtos já no carrinho
     private List<User> UserList = new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class Shoppinglist {
         Productlist2 = Productlist2;
     }
 
-    public Shoppinglist(String name,User user,User userlist,List<Product> productlist1,List<Product> productlist2,List<User> userList){
+    public Shoppinglist(String name,User user,List<Product> productlist1,List<Product> productlist2,List<User> userList){
         this.name = name;
         this.user = user;
         this.userlist = userlist;
@@ -41,6 +41,7 @@ public class Shoppinglist {
     }
 
     public List<Product> getTotalOfProductsOnShoppingCart() {
+
         return Productlist2;
     }
 
@@ -62,17 +63,17 @@ public class Shoppinglist {
     public double GetTotalPrice(){
         double totalprice = 0;
         for(int i = 0;i<Productlist1.size();i++){
-
+            totalprice = totalprice + Productlist1.get(i).getPrice();
         }
         return totalprice; //retornar total
     }
 
     public double GetTotalPriceOnCart(){
-        double totalprice = 0;
+        double totalpriceoncart = 0;
         for (int i = 0;i<Productlist2.size();i++){
-            
+            totalpriceoncart = totalpriceoncart + Productlist2.get(i).getPrice();
         }
-        return totalprice;//retornar total
+        return totalpriceoncart;//retornar total
     }
     public boolean addProduct(Product product){
         boolean success = Productlist1.add(product);
@@ -83,12 +84,15 @@ public class Shoppinglist {
         return removeProduct(product);
 
     }
-   public void AddProductToShoppingCart(Product product){
-        Productlist1.add(product);
+   public boolean AddProductToShoppingCart(Product product){
+
+        boolean success = Productlist2.add(product);
+        return success;
    }
 
-   public void RemoveProductFromShoppingCart(Product product){
-        Productlist2.add(product);
+   public boolean RemoveProductFromShoppingCart(Product product){
+
+        return  removeProduct(product);
    }
 
 
