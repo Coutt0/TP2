@@ -7,8 +7,9 @@ public class Shoppinglist {
     private User user;
     private User userlist;
 
-    public List<Product> Productlist1 = new ArrayList<>();//Lista de produtos para comprar
+    private List<Product> Productlist1 = new ArrayList<>();//Lista de produtos para comprar
     private List<Product> Productlist2 = new ArrayList<>();// Lista de produtos já no carrinho
+    private List<Product> Productlist3 = new ArrayList<>();//Lista nova
     private List<User> UserList = new ArrayList<>();
 
     public void setProductlist1(List<Product> Productlist1){
@@ -19,12 +20,22 @@ public class Shoppinglist {
         Productlist2 = Productlist2;
     }
 
+    public void setProductlist3(List<Product> Productlist3){
+        Productlist3 = Productlist3;
+    }
     public Shoppinglist(String name,User user,List<Product> productlist1,List<Product> productlist2,List<User> userList){
         this.name = name;
         this.user = user;
         this.userlist = userlist;
         Productlist1 = productlist1;
         Productlist2 = productlist2;
+        UserList = userList;
+    }
+    public Shoppinglist(String name,User user,List<Product> productlist3,List<User> userList){
+        this.name =name;
+        this.user = user;
+        this.userlist = userlist;
+        Productlist3 = Productlist3;
         UserList = userList;
     }
 
@@ -59,6 +70,13 @@ public class Shoppinglist {
         int sizeCarrinhoList = Productlist2.size();// tamanho lista carrinho de compras
         percent= (sizeCarrinhoList*100)/sizeList;// percentagem de produtos no carrinho de compras
         return percent; //retornar percentagem
+    }
+
+    public double GetPercentageCompleted2(){ //exercicio6
+        double percent = 0;
+        int sizeList = Productlist3.size();
+        percent = sizeList;
+        return percent;
     }
     public double GetTotalPrice(){
         double totalprice = 0;

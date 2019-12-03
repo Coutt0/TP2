@@ -5,14 +5,16 @@ public class Product {
     private Category category;
     private int price;
     private  String unityType;
+    private String fabricante;
 
-    public Product(String name, String description, String picture, Category category,int price, String unityType){
+    public Product(String name, String description, String picture, Category category,int price, String unityType,String fabricante){
         this.name = name;
         this.description = description;
         this.picture = picture;
         this.category = category;
         this.price = price;
         this.unityType = unityType;
+        this.fabricante = fabricante;
     }
 
     public String getName() {
@@ -21,6 +23,13 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getFabricante(){
+        return fabricante;
+    }
+    public void setFabricante(String fabricante){
+        this.fabricante = fabricante;
     }
 
     public String getDeion() {
@@ -70,3 +79,4 @@ public class Product {
         this.unityType = unityType;
     }
 }
+
