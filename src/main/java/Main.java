@@ -40,8 +40,10 @@ public class Main {
               newProductList2.add(product6);
               newProductList2.add(product1);
 
+       List<Product> newProductList3 = new ArrayList<>();
+
        Shoppinglist list1=new Shoppinglist("Lista1",user1,newProductList1,newProductList2,UserList);
-       Shoppinglist list2=new Shoppinglist("Lista2",user1,newProductList1,newProductList2,UserList);
+       Shoppinglist list2=new Shoppinglist("Lista2",user1,newProductList3,UserList);
 
        //Username das pessoas que partilham a lista
        System.out.println("Lista Partilhada por:");
@@ -77,6 +79,15 @@ public class Main {
         for (int i = 0;i<newProductList2.size();i++){
             System.out.println((newProductList2.get(i).getName()));
         }
+        //Imprimir descrições detalhadas de todos od produtos
+        System.out.println(("Descricoes detalhadas"));
+        for(int i = 0;i<newProductList2.size();i++){
+            System.out.println((newProductList2.get(i).getFabricante()));
+        }
+
+        //Exercicio 6
+        System.out.println(("Percentagem"));
+        System.out.println(list2.GetPercentageCompleted2());
 
     }
 }
